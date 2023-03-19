@@ -1227,20 +1227,10 @@ section {
         }
       }
       .contact-button {
-        background-image: linear-gradient(to right, #7fffbc 0%, #62d9ff 100%);
-        border: none;
-        box-sizing: border-box;
-        width: 305px;
-        height: 50px;
-        border-radius: 5px;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 22px;
-        color: #000000;
+        width: 300px;
         margin: 0 auto;
-        padding: 0;
-        cursor: pointer;
+        text-align: center;
+        display: block;
 
         span {
           margin: 1px;
