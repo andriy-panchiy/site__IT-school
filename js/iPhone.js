@@ -189,8 +189,6 @@ function addMessage(user, message) {
   });
 }
 
-addDialogue(messages[0]);
-
 // remove scroll bar if inactive
 const showScrollbars = (evt) => {
   const el = evt.currentTarget;
