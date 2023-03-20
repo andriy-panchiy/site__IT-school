@@ -40,7 +40,18 @@ var students_slider = new Swiper('.students-slider', {
 var reviews = new Swiper('.reviews-slider', {
   spaceBetween: 10,
   slidesPerView: 3,
-  freeMode: true
+  freeMode: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 1
+    },
+    480: {
+      slidesPerView: 2
+    },
+    768: {
+      slidesPerView: 3
+    }
+  }
 });
 var collective = new Swiper('.collective', {
   spaceBetween: 20,
@@ -54,6 +65,20 @@ var collective = new Swiper('.collective', {
     el: '.collective-scrollbar',
     hide: false,
     draggable: true
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1
+    },
+    480: {
+      slidesPerView: 2
+    },
+    768: {
+      slidesPerView: 3
+    },
+    1120: {
+      slidesPerView: 4
+    }
   }
 });
 var swiper = new Swiper('.mySwiper', {
@@ -96,13 +121,13 @@ var mixerReviews = mixitup(reviewsMixContainer, {
     scope: 'local'
   },
   callbacks: {
-    onMixStart: function onMixStart(state) {
+    onMixStart: function onMixStart() {
       reviews.update();
       reviews.allowSlideNext = false;
       reviews.allowSlidePrev = false;
       reviews.allowTouchMove = false;
     },
-    onMixEnd: function onMixEnd(state) {
+    onMixEnd: function onMixEnd() {
       reviews.update();
       reviews.allowSlideNext = true;
       reviews.allowSlidePrev = true;

@@ -43,6 +43,11 @@ const reviews = new Swiper('.reviews-slider', {
   spaceBetween: 10,
   slidesPerView: 3,
   freeMode: true,
+  breakpoints: {
+    0: { slidesPerView: 1 },
+    480: { slidesPerView: 2 },
+    768: { slidesPerView: 3 },
+  },
 });
 
 const collective = new Swiper('.collective', {
@@ -57,6 +62,12 @@ const collective = new Swiper('.collective', {
     el: '.collective-scrollbar',
     hide: false,
     draggable: true,
+  },
+  breakpoints: {
+    0: { slidesPerView: 1 },
+    480: { slidesPerView: 2 },
+    768: { slidesPerView: 3 },
+    1120: { slidesPerView: 4 },
   },
 });
 
@@ -104,13 +115,13 @@ const mixerReviews = mixitup(reviewsMixContainer, {
     scope: 'local',
   },
   callbacks: {
-    onMixStart: function (state) {
+    onMixStart: function () {
       reviews.update();
       reviews.allowSlideNext = false;
       reviews.allowSlidePrev = false;
       reviews.allowTouchMove = false;
     },
-    onMixEnd: function (state) {
+    onMixEnd: function () {
       reviews.update();
       reviews.allowSlideNext = true;
       reviews.allowSlidePrev = true;
